@@ -50,4 +50,4 @@ def followExternalOnly(startingSite):
     print('Random external link is: {}'.format(externalLink))
     followExternalOnly(externalLink)
 
-followExternalOnly('http://oreilly.com')
+followExternalOnly('http://www.naver.com')
