@@ -25,9 +25,14 @@ for sibling in bs2.find('table', {'id': 'giftList'}).tr.next_siblings:
 print(bs2.find('img', {'src': '../img/gifts/img1.jpg'}).parent.previous_sibling.get_text())
 #부모를 통해 역트리방향으로 탐색
 
-images = bs2.findAll('img', {'src': re.compile('\.\./img/gifts/img.*\.jpg')})
+images = bs2.findAll('img', {'src': re.compile('\.\./img/gifts/img.*\.jpg')}) #정규표현식을 이용한 상대경로 탐색
 for img in images:
-    print(img['src'])
-#정규표현식을 이용한 상대경로 탐색
+    print(img.attrs['src']) #myTag.attrs 로 파이썬 딕셔너리 형태의 객체에 대해 원하는 속성에 접근 가능
+
+print(len(bs1.findAll(lambda tag: tag.get_text() == 'Anna Pavlovna'))) #람다 함수를 이용하여 해당 text가 몇 번 나오는 지 탐색
+
+
+
+
 
 
